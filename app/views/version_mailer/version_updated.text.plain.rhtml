@@ -1,0 +1,11 @@
+<%= l(:label_version_updated) %>
+
+* <%= l(:label_project) %>: <%= @project.name %>
+* <%= l(:label_version) %>: <%= @version.name_was + " -> " if @version.name_changed? %><%= @version.name %>
+  <%= @version_url %>
+  <%= @version.description %>
+* <%= l(:field_effective_date) %>: <%= @effective_date_old + " -> " if @version.effective_date_changed? %><%= @effective_date_new %>
+* <%= l(:field_status) %>: <%= l("version_status_#{@version.status_was}") + " -> " if @version.status_changed? %><%= l("version_status_#{@version.status}") %>
+* <%= l(:label_wiki_page) %>: <%= @version.wiki_page_title %>
+  <%= @wiki_url %>
+

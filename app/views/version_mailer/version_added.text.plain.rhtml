@@ -1,0 +1,11 @@
+<%= l(:label_version_added) %>
+
+* <%= l(:label_project) %>: <%= @project.name %>
+* <%= l(:label_version) %>: <%= @version.name %>
+  <%= @version_url %>
+  <%= @version.description %>
+* <%= l(:field_effective_date) %>: <%= format_date(@version.effective_date) %>
+* <%= l(:field_status) %>: <%= l("version_status_#{@version.status}") %>
+* <%= l(:label_wiki_page) %>: <%= @version.wiki_page_title %>
+  <%= @wiki_url %>
+
