@@ -3,9 +3,9 @@ class VersionMailer < Mailer
   def version_added(version)
     project = version.project
     wiki_url = url_for(:controller => 'wiki', :action => 'show', :project_id => project, :id => version.wiki_page_title) unless version.wiki_page_title.blank?
-    redmine_headers 'Project' => project,
-                    'author' => User.current,
-                    'version-added' => version
+    redmine_headers 'Project' => project.identifier,
+                    'author' => User.current.login,
+                    'version-added' => version.id
     set_language_if_valid User.current.language
     # send to members permitted :view_issues.
     recipients project.members.collect {|m| m.user}.select {|user| user.allowed_to?(:view_issues, project)}.collect {|u| u.mail}
@@ -20,9 +20,9 @@ class VersionMailer < Mailer
   def version_updated(version)
     project = version.project
     wiki_url = url_for(:controller => 'wiki', :action => 'show', :project_id => project, :id => version.wiki_page_title) unless version.wiki_page_title.blank?
-    redmine_headers 'Project' => project,
-                    'author' => User.current,
-                    'version-modified' => version
+    redmine_headers 'Project' => project.identifier,
+                    'author' => User.current.login,
+                    'version-modified' => version.id
     set_language_if_valid User.current.language
     # send to members permitted :view_issues.
     recipients project.members.collect {|m| m.user}.select {|user| user.allowed_to?(:view_issues, project)}.collect {|u| u.mail}
