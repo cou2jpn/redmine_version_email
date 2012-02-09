@@ -6,28 +6,13 @@ effective_date and status.
 == Plugin installation
 
 1. Copy this plugin directory into the './vendor/plugins/' in your Redmine.
+
    No need to migrate database.
 
-3. Edit the file './lib/redmine/notifiable.rb' in your Redmine to add 2 lines as follows.
+2. Restart Redmine.
 
-/*
-   +++ notifiable.rb
-   @@ -20,6 +20,8 @@
-          notifications << Notifiable.new('message_posted')
-          notifications << Notifiable.new('wiki_content_added')
-          notifications << Notifiable.new('wiki_content_updated')
-   +      notifications << Notifiable.new('version_added')
-   +      notifications << Notifiable.new('version_updated')
-          notifications
-       end
-      end
-*/
-
-4. Restart Redmine.
-
-5. Login as administrator to your Redmine and Click to go
+3. Login as administrator to your Redmine and Click to go
    
    Administration > Settings > Email notifications
    
    Check the checkbox 'Version added', 'Version updated'.
-
