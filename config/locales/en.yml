@@ -1,3 +1,5 @@
 en:
+  label_version_added_by: "Version has been added by %{editor}."
+  label_version_updated_by: "Version has been updated by %{editor}."
   label_version_added: "Version added"
   label_version_updated: "Version updated"

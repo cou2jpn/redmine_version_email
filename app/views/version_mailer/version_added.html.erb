@@ -1,4 +1,4 @@
-<p><%= l(:label_version_added) %></p>
+<p><%= l(:label_version_added_by, :editor => User.current) %></p>
 <ul>
 <li><strong><%= l(:label_project) %></strong>: <%=h @project.name %></li>
 <li><strong><%= l(:label_version) %></strong>:
