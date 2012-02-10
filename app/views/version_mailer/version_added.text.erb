@@ -1,4 +1,4 @@
-<%= l(:label_version_added) %>
+<%= l(:label_version_added_by, :editor => User.current) %>
 
 * <%= l(:label_project) %>: <%= @project.name %>
 * <%= l(:label_version) %>: <%= @version.name %>
