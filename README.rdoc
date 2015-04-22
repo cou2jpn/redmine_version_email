@@ -5,7 +5,7 @@ effective_date and status.
 
 == Plugin installation
 
-1. Copy this plugin directory into the './vendor/plugins/' in your Redmine.
+1. Copy this plugin directory into the './plugins/' in your Redmine.
 
    No need to migrate database.
 
