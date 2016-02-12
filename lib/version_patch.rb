@@ -11,10 +11,10 @@ module VersionPatch
   end
   module InstanceMethods
     def version_added
-      VersionMailer.deliver_version_added(self) if Setting.notified_events.include?('version_added')
+      VersionMailer.version_added(self).deliver if Setting.notified_events.include?('version_added')
     end
     def version_updated
-      VersionMailer.deliver_version_updated(self) if Setting.notified_events.include?('version_updated')
+      VersionMailer.version_updated(self).deliver if Setting.notified_events.include?('version_updated')
     end
   end
 end
